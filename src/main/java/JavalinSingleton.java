@@ -21,8 +21,12 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance.
          */
         app.post("/echo", ctx -> {
-            
-            //implement logic here
+            String jsonString = ctx.body();
+             //using mapper above
+             Song echo = om.readValue(jsonString, Song.class);
+
+            // since we are dealing with Song class, make it into song object so it can use thoes methods
+            ctx.json(echo);
                 
         });
 
@@ -35,7 +39,12 @@ public class JavalinSingleton {
          */
         app.post("/changeartisttobeatles", ctx -> {
 
-            //implement logic here
+            String jsonString = ctx.body();
+            Song cAtB = om.readValue(jsonString, Song.class);
+
+            cAtB.setArtistName("Beatles");
+
+            ctx.json(cAtB);
                
         });
 
