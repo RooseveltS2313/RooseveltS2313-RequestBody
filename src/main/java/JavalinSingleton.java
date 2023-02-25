@@ -41,7 +41,6 @@ public class JavalinSingleton {
 
             String jsonString = ctx.body();
             Song cAtB = om.readValue(jsonString, Song.class);
-            // ReaDing compreshension
             cAtB.setArtistName("Beatles");
 
             ctx.json(cAtB);
