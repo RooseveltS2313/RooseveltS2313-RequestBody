@@ -22,7 +22,7 @@ public class JavalinSingleton {
          */
         app.post("/echo", ctx -> {
             String jsonString = ctx.body();
-             //using mapper above
+             //using mapper above, yes
              Song echo = om.readValue(jsonString, Song.class);
 
             // since we are dealing with Song class, make it into song object so it can use thoes methods
